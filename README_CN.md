@@ -100,6 +100,15 @@ Add-RecipientPermission -Identity "sender@contoso.com" -Trustee <SERVICE_PRINCIP
 - SMTP Host/Port 建议保持工具默认（Global 一般是 **587 + STARTTLS**）
 - SMTP 的 client credentials scope 一般使用 **`https://outlook.office365.com/.default`**（工具会按 Global/21V 自动切默认值）
 
+### 21V（世纪互联）差异点
+
+如果你的租户/邮箱在 **Office 365 中国（世纪互联 / 21V）**，以下参数与 Global 不同：
+
+- Authority Host：`https://login.chinacloudapi.cn`（不是 `login.microsoftonline.com`）
+- SMTP Host（OAuth2/Basic）：`smtp.partner.outlook.cn`
+- SMTP OAuth2 Scope（client credentials）：`https://partner.outlook.cn/.default`
+- 匿名入站/EOP Host 后缀：`mail.protection.partner.outlook.cn`
+
 ## 从源码运行
 
 ```powershell

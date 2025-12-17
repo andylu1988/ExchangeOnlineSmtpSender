@@ -99,6 +99,15 @@ In the app UI:
 - Keep the default SMTP host/port (Global typically uses port **587** with STARTTLS)
 - Scope for SMTP client credentials: use **`https://outlook.office365.com/.default`** (the tool sets defaults per cloud)
 
+### 21V (China) notes
+
+If your tenant/mailbox is in **Office 365 China (21Vianet)**, these values are different from Global:
+
+- Authority host: `https://login.chinacloudapi.cn` (not `login.microsoftonline.com`)
+- SMTP host (OAuth2/Basic): `smtp.partner.outlook.cn`
+- SMTP OAuth2 scope (client credentials): `https://partner.outlook.cn/.default`
+- Anonymous inbound/EOP host pattern: `mail.protection.partner.outlook.cn`
+
 ## Run from source
 
 ```powershell
